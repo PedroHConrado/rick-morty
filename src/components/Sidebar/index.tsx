@@ -3,6 +3,7 @@ import { FaHeart } from "react-icons/fa";
 import { ImHome, ImHeart } from "react-icons/im";
 
 import yodaImg from '../../assets/yodabrabo.jpg'
+import { Link } from 'react-router-dom';
 
 
 export function Sidebar() {
@@ -19,8 +20,8 @@ export function Sidebar() {
 
             <section className="header-content">
 
-                <button type="button"><ImHome style={{ marginRight: 10 }} /> Home</button>
-                <button type="button"><ImHeart style={{ marginRight: 10 }} /> Favorites</button>
+                <Link to="/" className="button"><ImHome style={{ marginRight: 10 }} />Home</Link>
+                <Link to="/favorites" className="button"><ImHeart style={{ marginRight: 10 }} />Favorites</Link>
 
             </section>
 

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.nav`
     margin-left: 250px;
+    margin-bottom: 5rem;
     
 
     form {

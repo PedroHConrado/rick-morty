@@ -60,11 +60,13 @@ export const Container = styled.div`
         
       
 
-        button {
+        .button {
             height: 40px;
             border: none;
             background: transparent;
             color: gray;
+
+            text-decoration: none;
 
             font-size: 1.2rem;
             font-weight: 500;
@@ -77,7 +79,7 @@ export const Container = styled.div`
 
             transition: .3s;
 
-            & + button {
+            & + .button {
                 margin-top: 10px;
             }
 
