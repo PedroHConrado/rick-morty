@@ -1,9 +1,28 @@
 import { useCharacter } from "../../hooks/useCharacter";
 import { Container } from "./styles";
+import { AiFillCloseCircle } from 'react-icons/ai'
+import { toast } from 'react-toastify'
 
 export function Favorites() {
-    const { favorites } = useCharacter()
+    const { favorites, setFavorites } = useCharacter()
     console.log(favorites)
+
+    const removeFavorite = (id: number) => {
+        try {
+            const newFavorites = [...favorites]
+            const favoriteIndex = newFavorites.findIndex(favorite => favorite.id === id)
+
+            if (favoriteIndex >= 0) {
+                newFavorites.splice(favoriteIndex, 1)
+                setFavorites(newFavorites)
+                localStorage.setItem('@RocketShoes:cart', JSON.stringify(newFavorites))
+            } else {
+                throw Error();
+            }
+        } catch {
+            toast.error('Erro na remoção do produto')
+        }
+    };
 
     return (
         <Container >
@@ -15,9 +34,8 @@ export function Favorites() {
                     </main>
                     <h3>{favorite.status}</h3>
                     <p>{favorite.gender}</p>
-                    <button
-                    >
-                        Fechar
+                    <button onClick={() => removeFavorite(favorite.id)}>
+                        <AiFillCloseCircle style={{ fontSize: 40 }} />
                     </button>
                 </li>
 

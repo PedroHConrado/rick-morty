@@ -4,16 +4,24 @@ export const Container = styled.main`
     border-radius: 1rem; 
     width: 1500px;
     height: 100%;
-    margin: 0 0 0 21rem;
+    
+    margin: 0 0 0 22rem;
 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     list-style: none;
-    display: flex;
-    gap: 5rem;
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
    
     li {
         display: flex;
         flex-direction: column;
-
+        margin-top: 5rem;
+        
         position: relative;
 
         background: var(--gray);
@@ -85,6 +93,8 @@ export const Container = styled.main`
             border: none;
             background: transparent;
             color: #778899;
+
+            margin-top: 2rem;
 
             transition: .3s;
 

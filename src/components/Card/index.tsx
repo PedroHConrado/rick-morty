@@ -1,16 +1,18 @@
 import axios from "axios"
+import { useState } from "react"
 import { ImHeart } from "react-icons/im"
 import { useCharacter } from "../../hooks/useCharacter"
 import { Container } from "./styles"
 
 export function Card() {
     const { characters, favorites, setFavorites } = useCharacter()
+    const [active, setActive] = useState(false);
 
     async function handleAddFavorite(id: number) {
         const res = await axios.get(`https://rickandmortyapi.com/api/character/${id}`)
-        console.log(id)
-        console.log(res.data)
+
         setFavorites([...favorites, res.data])
+        setActive(!active)
     }
 
     return (
@@ -25,8 +27,14 @@ export function Card() {
                     <p>{char.gender}</p>
                     <button
                         type="button"
-                        onClick={() => handleAddFavorite(char.id)}>
-                        <ImHeart style={{ margin: 30, fontSize: 40 }} />
+                        onClick={() => handleAddFavorite(char.id)}
+
+                    >
+                        {active ? (
+                            <ImHeart className="heart" style={{ margin: 30, fontSize: 40, color: 'red' }} />
+                        ) : (
+                            <ImHeart className="heart" style={{ margin: 30, fontSize: 40 }} />
+                        )}
                     </button>
                 </li>
 

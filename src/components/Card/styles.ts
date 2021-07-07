@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+
 export const Container = styled.div`
     list-style: none;
     display: flex;
@@ -57,8 +59,8 @@ export const Container = styled.div`
 
         p {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 5px;
+            right: 5px;
 
             font-family: 'Roboto', sans-serif;
             font-weight: 700;
@@ -67,8 +69,8 @@ export const Container = styled.div`
             border: 1px solid #DCDCDC;
             border-radius: 50%;
 
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
 
             display: flex;
             justify-content: center;
@@ -86,6 +88,7 @@ export const Container = styled.div`
             &:hover {
                 color: var(--black);
             }
+
         }
     }
 `
