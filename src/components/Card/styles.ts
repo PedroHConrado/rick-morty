@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 
-
-
 export const Container = styled.div`
     list-style: none;
     display: flex;
     gap: 5rem;
+
+    .spinner {
+        position: absolute;
+        top: 25%;
+        transform: translateX(50%);
+        right: 50%;
+    }
    
     li {
         display: flex;

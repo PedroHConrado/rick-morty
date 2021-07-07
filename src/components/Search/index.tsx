@@ -8,8 +8,9 @@ import { useCharacter } from "../../hooks/useCharacter";
 
 
 
+
 export function Search() {
-    const { setCharacters } = useCharacter()
+    const { setCharacters, setLoading } = useCharacter()
 
     const [input, setInput] = useState('')
 
@@ -19,6 +20,7 @@ export function Search() {
         try {
             const response = await axios.get(`https://rickandmortyapi.com/api/character/?name=${input}`)
             setCharacters(response.data.results)
+            timeOutSpinner()
         } catch {
             toast.error("Personagem não existe")
         }
@@ -26,6 +28,14 @@ export function Search() {
         setInput('')
 
     }
+
+    function timeOutSpinner() {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }
+
 
     return (
         <Container>
@@ -40,7 +50,11 @@ export function Search() {
                     />
                 </div>
 
-                <button type="submit">Search</button>
+                <button
+                    type="submit"
+                >
+                    Search
+                </button>
             </form>
         </Container>
 

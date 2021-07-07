@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.nav`
-    margin-left: 250px;
+    margin-left: 100px;
     margin-bottom: 5rem;
     
 
