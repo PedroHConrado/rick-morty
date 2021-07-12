@@ -32,7 +32,11 @@ export function Favorites() {
                         <img src={favorite.image} alt="Imagem do personagem" />
                         <h1>{favorite.name}</h1>
                     </main>
-                    <h3>{favorite.status}</h3>
+                    {(favorite.status === 'Alive') ? (
+                        <h3 className="alive">{favorite.status}</h3>
+                    ) : (
+                        <h3 className="dead">{favorite.status}</h3>
+                    )}
                     <p>{favorite.gender}</p>
                     <button onClick={() => removeFavorite(favorite.id)}>
                         <AiFillCloseCircle style={{ fontSize: 40 }} />

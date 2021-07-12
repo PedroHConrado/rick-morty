@@ -63,6 +63,14 @@ export const Container = styled.div`
             align-items: center;
         }
 
+        .alive {
+            color: green;
+        }
+
+        .dead {
+            color: red;
+        }
+
         p {
             position: absolute;
             top: 5px;

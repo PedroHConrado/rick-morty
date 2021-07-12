@@ -29,8 +29,6 @@ export function CharacterProvider({ children }: CharacterProviderProps) {
     const [favorites, setFavorites] = useState<CharactersProps[]>([])
     const [loading, setLoading] = useState(false);
 
-
-
     return (
         <CharacterContext.Provider value={{ characters, setCharacters, favorites, setFavorites, loading, setLoading }}>
             {children}

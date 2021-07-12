@@ -1,5 +1,4 @@
 import axios from "axios"
-import { useState } from "react"
 import { ImHeart } from "react-icons/im"
 import { useCharacter } from "../../hooks/useCharacter"
 import { Container } from "./styles"
@@ -10,7 +9,6 @@ import { toast } from "react-toastify"
 
 export function Card() {
     const { characters, favorites, setFavorites, loading } = useCharacter()
-    const [activeButtons, setActiveButtons] = useState<Number[]>([]);
 
     async function handleAddFavorite(id: number) {
 
@@ -21,13 +19,7 @@ export function Card() {
             const res = await axios.get(`https://rickandmortyapi.com/api/character/${id}`)
             setFavorites([...favorites, res.data])
 
-            setActiveButtons([
-                ...activeButtons,
-                id
-            ])
-
         }
-
 
     }
 
@@ -44,7 +36,12 @@ export function Card() {
                             <img src={char.image} alt="Imagem do personagem" />
                             <h1>{char.name}</h1>
                         </main>
-                        <h3>{char.status}</h3>
+                        {(char.status === 'Alive') ? (
+                            <h3 className="alive">{char.status}</h3>
+                        ) : (
+                            <h3 className="dead">{char.status}</h3>
+                        )}
+
                         <p>{char.gender}</p>
                         <button
                             type="button"
