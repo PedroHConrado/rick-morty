@@ -54,7 +54,7 @@ I Love R&M e uma aplicaçao para consulta, visualização e cadastro de personag
 
 ## 📝 License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/PedroHConrado/rick-morty/blob/main/LICENSE) para mais detalhes.
 
 ---
 
