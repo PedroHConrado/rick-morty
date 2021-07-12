@@ -24,6 +24,7 @@ export function Search() {
 
         } catch {
             toast.error("Personagem não existe")
+            setCharacters([])
         }
 
         setInput('')
