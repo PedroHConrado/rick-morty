@@ -18,9 +18,10 @@ export function Search() {
         event.preventDefault()
 
         try {
+            timeOutSpinner()
             const response = await axios.get(`https://rickandmortyapi.com/api/character/?name=${input}`)
             setCharacters(response.data.results)
-            timeOutSpinner()
+
         } catch {
             toast.error("Personagem não existe")
         }
@@ -33,7 +34,7 @@ export function Search() {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 1000);
     }
 
 
